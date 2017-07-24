@@ -3,3 +3,24 @@ body {
   padding: 0;
   background-color: whitesmoke;
 }
+shoelist {
+  border: 1px solid;
+}
+
+.button {
+  border: none;
+  box-shadow: 0px 1px 2px #888;
+  width: 100%;
+  padding: 20px;
+  font-size: 15px;
+  text-align: left;
+  background-color: #fff;
+}
+.button, a {
+  color: orange !important;
+  cursor: pointer;
+}
+
+h4 {
+  color: #777;
+}

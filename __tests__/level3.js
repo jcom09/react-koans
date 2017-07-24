@@ -75,27 +75,38 @@ describe('App', () => {
 
   it('should have `state.facetSelected` that equals null', () => {
     // WRITE THIS TEST!
-    return false;
+    const wrapper = shallow(<App/>);
+    expect(wrapper.state().facetSelected).toEqual(null);
   });
 
   it('should have an instance method called `handleFacetSelect`', () => {
     // WRITE THIS TEST!
-    return false;
+    const wrapper = shallow(<App/>);
+    expect(wrapper.instance().handleFacetSelect).toBeInstanceOf(Function);
   });
 
   it('the instance method should update `state.facetSelected`', () => {
     // WRITE THIS TEST!
-    return false;
+    const wrapper = shallow(<App/>);
+    wrapper.instance().handleFacetSelect(1);
+    expect(wrapper.state().facetSelected).toEqual(1);
   });
 
   it('the instance method should update `state.facetSelected` to null if a shoe is selected already (toggle off)', () => {
     // WRITE THIS TEST!
-    return false;
+    const wrapper = shallow(<App/>);
+    expect(wrapper.state().facetSelected).toEqual(1);
+
+    wrapper.instance().handleFacetSelect();
+    expect(wrapper.state().facetSelected).toEqual(null);
   });
 
-  it('the <Facet /> component should be passed `handleSelect` as a prop', () => {
+  it('the <Facet /> component should be passed `handleFacetSelect` as a prop', () => {
     // WRITE THIS TEST!
-    return false;
+    const wrapper = shallow(<App/>);
+    const facetSelect = wrapper.find(Facet).props();
+    expect(Object.keys(facetSelect)).toContain('onFacetSelect');
+    expect(facetSelect.onFacetSelect).toBeInstanceOf(Function);
   });
 
   it('the list of shoes display should be filter based on the facet selected', () => {

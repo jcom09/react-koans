@@ -16,6 +16,22 @@
  * @param arr An array of objects
  * @param key A string of the object property
  */
-export function countByKey (arr, key) {
+import Api from '../api/index';
 
+export function countByKey (arr, key) {
+  var block = [];
+    arr.filter((a) => {
+      if (a.brand === key) {
+        var shoe = a.brand + " - " + a.name;
+        block.push(shoe);
+        console.log(block);
+      }
+    });
+  return block;
 }
+
+//Objects are not valid as a React child
+// var block = [{
+//   brand: '',
+//   count: null
+// }];
